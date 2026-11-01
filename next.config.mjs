@@ -4,7 +4,10 @@ export default createMDX()({
   basePath,
   poweredByHeader: false,
   agentRules: false,
-  env: { NEXT_PUBLIC_DOCS_BASE_PATH: basePath },
+  env: {
+    NEXT_PUBLIC_DOCS_BASE_PATH: basePath,
+    DOCS_DEPLOY_CONTEXT: process.env.CONTEXT || process.env.VERCEL_ENV || '',
+  },
   async redirects() {
     return [
       { source: '/index', destination: '/', permanent: true },
