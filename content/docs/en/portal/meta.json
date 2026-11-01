@@ -1,0 +1,11 @@
+{
+  "title": "Business dashboard",
+  "pages": [
+    "getting-started",
+    "products",
+    "checkout-links",
+    "payments",
+    "subscriptions",
+    "websites"
+  ]
+}

@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+@font-face { font-family: Onest; src: url('../public/fonts/onest-variable.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: 'Noto Sans Georgian'; src: url('../public/fonts/noto-sans-georgian-variable.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+@theme { --font-sans: 'Onest', 'Noto Sans Georgian', sans-serif; --color-fd-primary: #3B82F6; --color-fd-primary-foreground: #fff; }
+.dark { --color-fd-background: #0A0A0C; --color-fd-primary: #3B82F6; }
+body { font-family: var(--font-sans); }
+.bryng-brand { display: inline-flex; align-items: center; gap: 12px; }
+.bryng-brand img { width: 84px; height: auto; }
+.bryng-brand > span { border-left: 1px solid var(--color-fd-border); padding-left: 12px; font-size: 14px; font-weight: 500; color: var(--color-fd-muted-foreground); }
+.logo-dark, .dark .logo-light { display: none; }
+.dark .logo-dark { display: block; }
+.language-switch { display: flex; gap: 6px; padding: 8px; font-size: 13px; }
+.language-switch a { padding: 6px 10px; border-radius: 6px; }
+.language-switch a[aria-current] { background: var(--color-fd-accent); color: var(--color-fd-primary); }
+html[lang="ka"] article { line-height: 1.8; }
+html[lang="ka"] h1, html[lang="ka"] h2, html[lang="ka"] h3 { letter-spacing: normal; }
+
+/* Text accents meet contrast requirements in both themes; logo colors stay exact. */
+:root { --color-fd-primary: #1D4ED8; }
+.dark {
+  --color-fd-primary: #88B5FF;
+  --color-fd-primary-foreground: #0A0A0C;
+  --color-fd-card: #19191F;
+  --color-fd-popover: #19191F;
+  --color-fd-accent: #26262E;
+  --color-fd-muted-foreground: #B8BEC9;
+}
+.skip-link { position: fixed; z-index: 100; top: 8px; left: 8px; padding: 12px 16px; border-radius: 8px; background: var(--color-fd-background); color: var(--color-fd-foreground); transform: translateY(-160%); }
+.skip-link:focus { transform: translateY(0); outline: 2px solid #3B82F6; }
+.language-switch a { min-height: 44px; display: inline-flex; align-items: center; }
+@media (max-width: 767px) { #nd-subnav button { min-width: 44px; min-height: 44px; } }
