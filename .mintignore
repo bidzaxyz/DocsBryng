@@ -5,3 +5,7 @@
 # Draft content
 drafts/
 *.draft.mdx
+
+# Exclude template guidance and contributor instructions from public docs.
+quickstart.mdx
+AGENTS.md

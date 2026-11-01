@@ -1,55 +1,34 @@
-# Mintlify Starter Kit
+# Bryng Docs
 
-Use the starter kit to get your docs deployed and ready to customize.
+Mintlify documentation for developers, API users, and business admins.
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+Connect this repository in Mintlify with the documentation directory set to the
+repository root, where `docs.json` lives.
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+## Local editing
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+Install the official Mintlify CLI (`npm install -g mint`), then run `mint dev`
+from this directory. Content lives in MDX files; navigation and branding live in
+`docs.json`.
 
-## AI-assisted writing
+Mintlify can publish automatically when a connected branch changes. Review
+changes locally and obtain approval before pushing release content.
 
-Set up your AI coding tool to work with Mintlify:
+## Content structure
 
-```bash
-npx skills add https://mintlify.com/docs
-```
+English articles live at the repository root; Georgian translations mirror them
+in `ka/`. Keep both versions aligned. Developer information and Business dashboard
+guides have separate navigation tabs. Initial guides cover setup, products,
+payments, websites, and support.
 
-This command installs Mintlify's documentation skill for your configured AI tools like Claude Code, Cursor, Windsurf, and others. The skill includes component reference, writing standards, and workflow guidance.
+Mintlify does not currently accept Georgian in its native language configuration.
+An English / ქართული dropdown selects mirrored navigation instead. Built-in
+platform labels retain Mintlify’s default language. `locale.js` sets the page
+language to `ka` for Georgian routes and updates it after navigation. Georgian
+uses the approved self-hosted Noto Sans Georgian font as the Onest fallback.
 
-See the [AI tools guides](/ai-tools) for tool-specific setup.
+The default template quickstart and contributor instructions are excluded with
+`.mintignore`. Validate with `mint validate` and `mint broken-links`.
 
-## Development
-
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
-
-```
-npm i -g mint
-```
-
-Run the following command at the root of your documentation, where your `docs.json` is located:
-
-```
-mint dev
-```
-
-View your local preview at `http://localhost:3000`.
-
-## Publishing changes
-
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
-
-## Need help?
-
-### Troubleshooting
-
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+`docsbryng` is the repository connected during onboarding; the earlier
+`bryngdocs` repository contains the initial bootstrap only.
